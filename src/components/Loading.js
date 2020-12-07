@@ -1,9 +1,10 @@
+import './Loading.css'
 import React from 'react';
 import { connect } from 'react-redux';
 
 const Loading = ({isLoading}) => {
   return (
-     isLoading && <div>App is loading</div>
+     isLoading && <div className="loading--fullscreen">App is loading...</div>
   )
 }
 

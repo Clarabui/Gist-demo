@@ -1,0 +1,14 @@
+.loading--fullscreen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 40px;
+  color: rgb(256, 256, 256);
+  font-weight: 800;
+}
