@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import Repeat from './Repeat.js';
 import { useEffect } from 'react';
 import getGists from '../services';
+import GistSnapshot from './GistSnapshot';
 
 const Home = (props) => {
   useEffect(() => {
@@ -13,18 +14,9 @@ const Home = (props) => {
   }, [])
 
   return (
-    <Repeat items={props.items} renderedItem={(item) => {
-      return (
-        <div key={item.id}>
-          <h1>{item.id}</h1>
-          <img src={item.owner.avatar_url} />
-          <h5>{item.owner.login}</h5>
-          <h5>{item.created_at}</h5>
-          <h5>{item.description}</h5>
-          <h5>{Object.entries(item.files)[0][1].raw_url}</h5>
-        </div>
-      )
-    }}
+    <Repeat
+      items={props.items}
+      renderedItem={ item => <GistSnapshot item={item} key={item.id} /> }
     />
   )
 }

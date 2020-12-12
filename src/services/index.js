@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const getGists = (successHandler) => {
-  axios.get("https://api.github.com/gists/public")
+  axios.get("/gists.json")
   .then(json => {
     successHandler(json)
   })
