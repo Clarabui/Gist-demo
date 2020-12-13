@@ -1,4 +1,4 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
 const loadingInitialState = {loading: false}
@@ -36,9 +36,10 @@ const gistsReducer = (state = gistsInitialState, action) => {
 
 }
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const reducer = combineReducers({load: loadingReducer, viewGist: viewGistReducer, gists: gistsReducer})
-let store = createStore(reducer, applyMiddleware(thunk))
 
+const store = createStore(reducer, /* preloadedState, */ composeEnhancers(applyMiddleware(thunk)));
 
 store.subscribe(() => console.log(store.getState()))
 
