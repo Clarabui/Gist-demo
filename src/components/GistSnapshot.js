@@ -17,10 +17,6 @@ const fileCount = (gist) => {
   return Object.values(gist.files).length;
 }
 
-const forkCount = (gist) => {
-  return 0;
-}
-
 const commentCount = (gist) => {
   return gist.comments;
 }
@@ -66,7 +62,7 @@ const GistSnapshot = ({ item }) => {
               </div>
               <div className="px-2">
                 <CIcon content={freeSet.cilFork} size="lg" className="pr-1" />
-                <span> {forkCount(item)} forks</span>
+                <span> {item.forksCount} forks</span>
               </div>
               <div className="px-2">
                 <CIcon content={freeSet.cilCommentSquare} size="lg" className="pr-1" />
