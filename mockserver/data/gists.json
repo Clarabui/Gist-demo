@@ -1,7 +1,7 @@
 [
   {
     "url": "https://api.github.com/gists/84efaf4e6bffaebe5101f2f02a3d30e5",
-    "forks_url": "https://api.github.com/gists/84efaf4e6bffaebe5101f2f02a3d30e5/forks",
+    "forks_url": "/forks2.json",
     "commits_url": "https://api.github.com/gists/84efaf4e6bffaebe5101f2f02a3d30e5/commits",
     "id": "84efaf4e6bffaebe5101f2f02a3d30e5",
     "node_id": "MDQ6R2lzdDg0ZWZhZjRlNmJmZmFlYmU1MTAxZjJmMDJhM2QzMGU1",
@@ -48,7 +48,7 @@
   },
   {
     "url": "https://api.github.com/gists/b3e3769489c0f66e6fd66614249e6baf",
-    "forks_url": "https://api.github.com/gists/b3e3769489c0f66e6fd66614249e6baf/forks",
+    "forks_url": "/forks1.json",
     "commits_url": "https://api.github.com/gists/b3e3769489c0f66e6fd66614249e6baf/commits",
     "id": "b3e3769489c0f66e6fd66614249e6baf",
     "node_id": "MDQ6R2lzdGIzZTM3Njk0ODljMGY2NmU2ZmQ2NjYxNDI0OWU2YmFm",
@@ -95,7 +95,7 @@
   },
   {
     "url": "https://api.github.com/gists/6273547ca041ceda437c3bedd3f22915",
-    "forks_url": "https://api.github.com/gists/6273547ca041ceda437c3bedd3f22915/forks",
+    "forks_url": "/forks2.json",
     "commits_url": "https://api.github.com/gists/6273547ca041ceda437c3bedd3f22915/commits",
     "id": "6273547ca041ceda437c3bedd3f22915",
     "node_id": "MDQ6R2lzdDYyNzM1NDdjYTA0MWNlZGE0MzdjM2JlZGQzZjIyOTE1",
@@ -170,7 +170,7 @@
   },
   {
     "url": "https://api.github.com/gists/864cc4f36b1d7e330ac65086befa4e6f",
-    "forks_url": "https://api.github.com/gists/864cc4f36b1d7e330ac65086befa4e6f/forks",
+    "forks_url": "/forks2.json",
     "commits_url": "https://api.github.com/gists/864cc4f36b1d7e330ac65086befa4e6f/commits",
     "id": "864cc4f36b1d7e330ac65086befa4e6f",
     "node_id": "MDQ6R2lzdDg2NGNjNGYzNmIxZDdlMzMwYWM2NTA4NmJlZmE0ZTZm",
@@ -217,7 +217,7 @@
   },
   {
     "url": "https://api.github.com/gists/fc0032168607b5b8bad342393fed0773",
-    "forks_url": "https://api.github.com/gists/fc0032168607b5b8bad342393fed0773/forks",
+    "forks_url": "/forks1.json",
     "commits_url": "https://api.github.com/gists/fc0032168607b5b8bad342393fed0773/commits",
     "id": "fc0032168607b5b8bad342393fed0773",
     "node_id": "MDQ6R2lzdGZjMDAzMjE2ODYwN2I1YjhiYWQzNDIzOTNmZWQwNzcz",

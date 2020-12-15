@@ -72,7 +72,7 @@ const GistSnapshot = ({ item }) => {
           </div>
         </div>
         <div className="row">
-          <div class="col-12">
+          <div className="col-12">
             <div className="border rounded-sm border-primary p-2 m-2">
               <Highlight language={firstFile.language} className="max-height-300">
                 {item.firstFileRawContent}
