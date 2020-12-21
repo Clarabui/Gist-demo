@@ -3,8 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import CIcon from '@coreui/icons-react';
 import { freeSet } from '@coreui/icons';
+import { connect } from "react-redux";
 import 'highlight.js/styles/a11y-light.css';
 import Highlight from "react-highlight-updated";
+import { useHistory} from 'react-router-dom';
 
 import './GistSnapshot.css'
 import moment from 'moment';
@@ -21,8 +23,14 @@ const commentCount = (gist) => {
   return gist.comments;
 }
 
-const GistSnapshot = ({ item }) => {
+const GistSnapshot = ({ item, setViewItem }) => {
   let firstFile = Object.values(item.files)[0];
+  const history = useHistory();
+
+  const setSelectedItem = () => {
+    setViewItem(item);
+    history.push(`/show/${item.id}`);
+  }
 
   return (
     <>
@@ -73,7 +81,7 @@ const GistSnapshot = ({ item }) => {
         </div>
         <div className="row">
           <div className="col-12">
-            <div className="border rounded-sm border-primary p-2 m-2">
+            <div className="border rounded-sm border-primary p-2 m-2" onClick={setSelectedItem}>
               <Highlight language={firstFile.language} className="max-height-300">
                 {item.firstFileRawContent}
               </Highlight>
@@ -85,4 +93,10 @@ const GistSnapshot = ({ item }) => {
   )
 }
 
-export default GistSnapshot;
+const mapActionsToProps = (dispatch) => {
+  return {
+    setViewItem: (item) => dispatch({type: "setViewItem", data: {item: item}})
+  }
+}
+
+export default connect(null, mapActionsToProps)(GistSnapshot);

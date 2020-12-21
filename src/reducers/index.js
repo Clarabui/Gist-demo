@@ -16,9 +16,9 @@ const loadingReducer = (state = loadingInitialState, action) => {
 const viewGistInitialState = {viewItem: null}
 const viewGistReducer = (state = viewGistInitialState, action) => {
   switch (action.type) {
-    case 'startView':
+    case 'setViewItem':
       return {viewItem: action.data.item}
-    case 'closeView':
+    case 'clearViewItem':
       return {viewItem: null}
     default:
       return state

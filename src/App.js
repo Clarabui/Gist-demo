@@ -10,7 +10,7 @@ function App(props) {
       <Loading />
       <Router>
         <Switch>
-          <Route path='/show'>
+          <Route path='/show/:id'>
             <Show />
           </Route>
           <Route path='/'>
