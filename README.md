@@ -9,7 +9,7 @@ albeit for gists, there is version control via git
   ```
 2. Install dependencies using `yarn install`
 3. Start the app `yarn start`
-4. Run mock data server `node mockserver/server.js`
+4. Run mock data server `node mockserver/server.js` or run on production `REACT_APP_ENV='production' yarn start`
 5. Open browser `http://localhost:3000/`
 
 # Screenshot
