@@ -13,7 +13,7 @@ const getGists = (successHandler) => {
     gistsEndpoint = "gists.json";
   }
 
-  axios.get(gistsEndpoint, { perPage: 1 })
+  axios.get(gistsEndpoint, { params: { per_page: 5 }})
     .then(json => {
       let rawFileFetches = json.data.map(gist => {
         let firstFile = Object.values(gist.files)[0];
