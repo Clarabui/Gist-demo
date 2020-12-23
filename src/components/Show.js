@@ -5,10 +5,28 @@ import 'highlight.js/styles/a11y-light.css';
 import Highlight from "react-highlight-updated";
 import CIcon from "@coreui/icons-react";
 import { freeSet } from "@coreui/icons";
+import axios from "axios";
+import { useEffect } from "react";
+import { getGistFiles } from '../services'
 
 
-const Show = ({ item }) => {
+const Show = ({ setViewItem, item }) => {
   let { id } = useParams();
+
+  useEffect(() => {
+    console.log("Reach here");
+    getGistFiles(item, (rawContents) => {
+      let filesWithRawContents = {}
+
+      Object
+        .entries(item.files)
+        .forEach(([fileName, fileData], idx) => {
+          filesWithRawContents[fileName] = {...fileData, rawContent: rawContents[idx]}
+        });
+
+       setViewItem({...item, files: filesWithRawContents});
+    });
+  }, []);
 
   return (
     <>
@@ -19,7 +37,7 @@ const Show = ({ item }) => {
 
         {Object.values(item.files).map( file => {
           return (
-            <div className="row border rounded-sm border-primary py-2 my-4">
+            <div className="row border rounded-sm border-primary py-2 my-4" key={file.filename}>
               <div className="col">
                 <div className="container">
                   <div className="row d-flex justify-content-between">
@@ -31,8 +49,8 @@ const Show = ({ item }) => {
                   </div>
                   <div className="row">
                     <div className="col">
-                      <Highlight>
-                        {item.firstFileRawContent}
+                      <Highlight languagle={file.language}>
+                        {file.rawContent}
                       </Highlight>
                     </div>
                   </div>
@@ -53,7 +71,9 @@ const mapsStatesToProps = (state) => {
 }
 
 const mapActionsToProps = (dispatch) => {
-  return {}
+  return {
+    setViewItem: (item) => dispatch({type: "setViewItem", data: {item: item}})
+  }
 }
 
 export default connect(mapsStatesToProps, mapActionsToProps)(Show)

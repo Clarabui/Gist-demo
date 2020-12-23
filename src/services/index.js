@@ -38,5 +38,15 @@ const getGists = (successHandler) => {
     .catch(err => console.error(err))
 }
 
-export default getGists;
+const getGistFiles = (gist, handleFn) => {
+  let rawContentRequests = Object.values(gist.files).map(file => axios.get(file.raw_url));
+
+  Promise
+    .all(rawContentRequests)
+    .then(values => {
+      handleFn(values.map(v => v.data));
+    }).catch(err => console.error(err));
+}
+
+export { getGists, getGistFiles };
 

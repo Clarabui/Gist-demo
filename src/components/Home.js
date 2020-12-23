@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import Repeat from './Repeat.js';
 import { useEffect } from 'react';
-import getGists from '../services';
+import { getGists } from '../services';
 import GistSnapshot from './GistSnapshot';
 
 const Home = (props) => {
